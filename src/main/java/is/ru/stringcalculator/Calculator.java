@@ -19,7 +19,14 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-	    
+	    if (numbers.startsWith("//")){
+ 			String delimeter = numbers.substring(2,3);
+ 			numbers = numbers.substring(2);
+ 			numbers = numbers.replaceAll(delimeter,"");
+			numbers = numbers.replaceAll("\n","");
+			numbers = numbers.replaceAll(",","");
+ 			return numbers.split("");
+	    }
 	    return numbers.split("(,|\n)");
 	   
 	}
