@@ -54,4 +54,8 @@ public class CalculatorTest {
     	}
     }
 
+    @Test
+    public void testNumbersBiggerThen1000Ignore(){
+    	assertEquals(2, Calculator.add("1001,2"));
+    }
 }

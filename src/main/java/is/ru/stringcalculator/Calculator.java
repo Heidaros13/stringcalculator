@@ -27,8 +27,7 @@ public class Calculator {
 			numbers = numbers.replaceAll(",","");
  			return numbers.split("");
 	    }
-	    return numbers.split("(,|\n)");
-	   
+	    return numbers.split("(,|\n)");  
 	}
       
     private static int sum(String[] numbers){
@@ -37,12 +36,10 @@ public class Calculator {
 		    if (toInt(number) < 0) {
 		    	throw new IllegalArgumentException("Negatives not allowed: " + number);
 		    }
-		    total += toInt(number);
+		    if (toInt(number) <= 1000){
+		    	total += toInt(number);
+		    }
 		}
 		return total;
     }
-
-
-
-
 }
